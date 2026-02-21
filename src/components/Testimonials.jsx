@@ -35,7 +35,6 @@ const Testimonials = ({ darkMode }) => {
                   <div className="text-secondary text-sm font-bangers uppercase">{t.role}</div>
                 </div>
               </div>
-              {/* Speech bubble tail */}
               <div className="absolute -bottom-4 left-10 w-8 h-8 bg-white dark:bg-slate-800 border-r-4 border-b-4 border-comic-black dark:border-white transform rotate-45 z-0"></div>
             </motion.div>
           ))}

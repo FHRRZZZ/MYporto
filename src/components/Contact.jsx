@@ -10,7 +10,7 @@ const Contact = ({ darkMode }) => (
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-5xl md:text-7xl font-bangers text-white mb-6 leading-none tracking-wider">
-              SIAP BERAKSI <br/> BERSAMA?
+              SIAP BERAKSI BERSAMA?
             </h2>
             <p className="text-white font-comic font-bold text-xl mb-12">Mari berkolaborasi untuk membangun sesuatu yang luar biasa.</p>
             <div className="flex space-x-4">

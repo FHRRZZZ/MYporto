@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 
-// Import Components
 import Preloader from './components/Preloader';
 import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';

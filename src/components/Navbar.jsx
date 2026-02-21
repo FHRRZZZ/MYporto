@@ -33,7 +33,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <div className="text-secondary transform skew-x-12">FH</div>
         </motion.div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <a 
@@ -52,7 +51,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center space-x-4">
           <button onClick={() => setDarkMode(!darkMode)} className="p-2 border-2 border-comic-black bg-white">
             {darkMode ? <Sun size={24} className="text-yellow-500" /> : <Moon size={24} className="text-slate-600" />}
@@ -63,7 +61,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div

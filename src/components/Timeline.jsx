@@ -42,9 +42,7 @@ const Timeline = ({ darkMode }) => {
             <h2 className="text-5xl font-bangers text-comic-black uppercase tracking-widest">PERJALANAN KARIER</h2>
           </div>
         </div>
-        
         <div className="relative">
-          {/* Vertical Line - Comic Style */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-2 bg-comic-black md:-translate-x-1/2 border-r-2 border-white" />
           
           <div className="space-y-16">
@@ -57,7 +55,6 @@ const Timeline = ({ darkMode }) => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className={`relative flex items-center gap-8 md:gap-0 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
-                {/* Content */}
                 <div className="flex-1 ml-16 md:ml-0">
                   <div className={`comic-card p-6 ${idx % 2 === 0 ? 'md:mr-12 transform -rotate-1' : 'md:ml-12 transform rotate-1'}`}>
                     <div className="flex justify-between items-start mb-4">
@@ -69,12 +66,10 @@ const Timeline = ({ darkMode }) => {
                   </div>
                 </div>
 
-                {/* Center Icon - Comic Badge */}
                 <div className="absolute left-0 md:left-1/2 top-0 w-16 h-16 comic-card p-0 bg-primary flex items-center justify-center text-white z-20 md:-translate-x-1/2 rounded-none transform rotate-12 group-hover:rotate-0 transition-transform">
                   {React.cloneElement(exp.icon, { size: 32, strokeWidth: 3 })}
                 </div>
 
-                {/* Empty Space for layout */}
                 <div className="hidden md:block flex-1" />
               </motion.div>
             ))}
