@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Download, Code2, Globe } from 'lucide-react';
+import profileImg from '../assets/profile.png';
 
 const Hero = ({ darkMode }) => (
   <section id="home" className={`min-h-screen flex items-center pt-28 pb-12 relative overflow-hidden transition-colors ${darkMode ? 'bg-slate-900' : 'bg-comic-paper'}`}>
@@ -52,7 +53,7 @@ const Hero = ({ darkMode }) => (
         <div className="comic-card p-2 bg-comic-black transform rotate-2">
           <div className="bg-white border-2 border-comic-black overflow-hidden aspect-square relative">
             <img 
-              src="../src/assets/profile.png" 
+              src={profileImg} 
               alt="Foto Profil" 
               className="w-full h-full object-cover filter contrast-125 grayscale-[20%] group-hover:scale-110 transition-transform duration-500"
             />
