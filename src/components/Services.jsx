@@ -11,21 +11,24 @@ const Services = ({ darkMode }) => {
   ];
 
   return (
-    <section id="services" className={`py-24 transition-colors ${darkMode ? 'bg-slate-800' : 'bg-slate-50'}`}>
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className={`text-4xl mb-16 ${darkMode ? 'text-white' : 'text-secondary-dark'}`}>Layanan <span className="text-primary italic">Unggulan</span></h2>
+    <section id="services" className={`py-24 transition-colors relative overflow-hidden ${darkMode ? 'bg-slate-900 border-t-4 border-comic-black' : 'bg-white border-t-4 border-comic-black'}`}>
+      <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div className="mb-16 inline-block bg-accent border-4 border-comic-black px-8 py-3 transform rotate-[-1deg] shadow-comic">
+          <h2 className="text-5xl font-bangers text-white uppercase tracking-wider">LAYANAN UNGGULAN</h2>
+        </div>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
-              whileHover={{ y: -10 }}
-              className={`p-8 rounded-[2.5rem] transition-all text-left group shadow-sm hover:shadow-xl ${darkMode ? 'bg-slate-900 border-slate-700 border' : 'bg-white border-slate-100 border'}`}
+              whileHover={{ scale: 1.05, rotate: idx % 2 === 0 ? 2 : -2 }}
+              className="comic-card text-left group flex flex-col items-center md:items-start"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
-                {service.icon}
+              <div className="w-16 h-16 bg-primary border-3 border-comic-black flex items-center justify-center text-white mb-6 transform -rotate-6 shadow-comic-sm group-hover:rotate-0 transition-transform">
+                {React.cloneElement(service.icon, { size: 32, strokeWidth: 3 })}
               </div>
-              <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-secondary-dark'}`}>{service.title}</h3>
-              <p className={darkMode ? 'text-slate-400' : 'text-secondary-light'}>{service.desc}</p>
+              <h3 className="text-2xl font-bangers text-comic-black dark:text-white mb-4 uppercase tracking-tight">{service.title}</h3>
+              <p className="font-comic font-bold text-comic-black dark:text-slate-300 text-lg">{service.desc}</p>
             </motion.div>
           ))}
         </div>

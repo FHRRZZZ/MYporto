@@ -39,23 +39,39 @@ const Projects = ({ darkMode }) => {
   return (
     <section id="projects" className={`py-24 transition-colors ${darkMode ? 'bg-slate-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className={`text-4xl mb-16 ${darkMode ? 'text-white' : 'text-secondary-dark'}`}>Proyek <span className="text-primary italic">Terpilih</span></h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="mb-16 relative">
+          <h2 className="text-6xl font-bangers text-comic-black dark:text-white transform rotate-[-2deg]">
+            PROYEK <span className="text-secondary italic">TERPILIH</span>
+          </h2>
+          <div className="h-2 w-48 bg-primary mt-2 transform rotate-[-2deg]"></div>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-12">
           {projects.map((project) => (
             <motion.div 
               key={project.title}
-              whileHover={{ y: -10 }}
+              whileHover={{ scale: 1.02 }}
               onClick={() => setSelectedProject(project)}
-              className={`group cursor-pointer rounded-[3rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all border ${darkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-100'}`}
+              className="comic-card p-0 overflow-hidden cursor-pointer flex flex-col group"
             >
-              <div className="aspect-video overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="aspect-video relative border-b-4 border-comic-black overflow-hidden">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 contrast-125" />
+                <div className="absolute top-4 left-4 comic-badge bg-primary text-white text-xs">
+                  {project.category}
+                </div>
+                <div className="absolute inset-0 bg-[radial-gradient(#000_1.5px,transparent_1.5px)] [background-size:6px_6px] opacity-10 pointer-events-none"></div>
               </div>
-              <div className="p-10">
-                <span className="text-primary text-xs font-bold uppercase tracking-widest">{project.category}</span>
-                <h3 className={`text-2xl mt-4 mb-6 font-bold ${darkMode ? 'text-white' : 'text-secondary-dark'}`}>{project.title}</h3>
-                <div className="flex items-center text-primary font-bold">
-                  Lihat Detail <ChevronRight className="ml-2 group-hover:translate-x-2 transition-transform" />
+              <div className="p-8">
+                <h3 className="text-3xl font-bangers text-comic-black dark:text-white mb-4 uppercase">{project.title}</h3>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.slice(0, 3).map(tag => (
+                    <span key={tag} className="bg-secondary/10 border-2 border-comic-black dark:border-white px-2 py-0.5 font-comic text-xs font-bold text-comic-black dark:text-white">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center text-primary font-bangers text-xl uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                  LIHAT DETAIL <ChevronRight className="ml-1" size={24} />
                 </div>
               </div>
             </motion.div>

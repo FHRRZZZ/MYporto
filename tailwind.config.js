@@ -6,19 +6,39 @@ export default {
     extend: {
       colors: {
         primary: {
-          light: "#2563eb", // Blue 600
-          DEFAULT: "#1d4ed8", // Blue 700
-          dark: "#1e40af", // Blue 800
+          light: "#facc15", // Yellow 400
+          DEFAULT: "#eab308", // Yellow 500
+          dark: "#ca8a04", // Yellow 600
         },
         secondary: {
-          light: "#334155", // Slate 700
-          DEFAULT: "#1e293b", // Slate 800
-          dark: "#0f172a", // Slate 900
+          light: "#ef4444", // Red 500
+          DEFAULT: "#dc2626", // Red 600
+          dark: "#991b1b", // Red 800
         },
+        accent: {
+          light: "#3b82f6", // Blue 500
+          DEFAULT: "#2563eb", // Blue 600
+          dark: "#1d4ed8", // Blue 700
+        },
+        comic: {
+          black: "#000000",
+          white: "#ffffff",
+          paper: "#fefce8",
+        }
       },
       fontFamily: {
+        comic: ["'Comic Neue'", "cursive"],
+        bangers: ["'Bangers'", "cursive"],
         sans: ["Inter", "sans-serif"],
       },
+      boxShadow: {
+        'comic': '4px 4px 0px 0px #000000',
+        'comic-lg': '8px 8px 0px 0px #000000',
+        'comic-sm': '2px 2px 0px 0px #000000',
+      },
+      borderWidth: {
+        '3': '3px',
+      }
     },
   },
   plugins: [],

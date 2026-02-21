@@ -12,32 +12,35 @@ const Preloader = ({ finishLoading }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="fixed inset-0 z-[9999] bg-secondary-dark flex items-center justify-center flex-col"
+      className="fixed inset-0 z-[9999] bg-primary flex items-center justify-center flex-col"
     >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: [0.8, 1.1, 1], opacity: 1 }}
-        transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="text-4xl font-bold tracking-tighter text-primary mb-8"
-      >
-        MIQDAD <span className="text-white">FH</span>
-      </motion.div>
-      <div className="w-48 h-1 bg-slate-800 rounded-full overflow-hidden relative">
+      <div className="comic-card bg-white p-12 transform -rotate-3 scale-125">
         <motion.div
-          initial={{ left: "-100%" }}
-          animate={{ left: "100%" }}
-          transition={{ duration: 2.5, ease: "easeInOut" }}
-          className="absolute top-0 w-full h-full bg-primary shadow-[0_0_15px_rgba(29,78,216,0.8)]"
-        />
+          initial={{ scale: 0.8 }}
+          animate={{ scale: [0.8, 1.1, 1] }}
+          transition={{ duration: 0.5, repeat: Infinity }}
+          className="text-6xl font-bangers text-comic-black tracking-widest text-center"
+        >
+          MIQDAD <span className="text-secondary">FH</span>
+        </motion.div>
+        
+        <div className="mt-8 w-48 h-4 bg-white border-3 border-comic-black relative overflow-hidden">
+          <motion.div
+            initial={{ left: "-100%" }}
+            animate={{ left: "0%" }}
+            transition={{ duration: 2.5, ease: "linear" }}
+            className="absolute inset-0 bg-primary border-r-3 border-comic-black"
+          />
+        </div>
+        
+        <motion.div
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ duration: 1, repeat: Infinity }}
+          className="mt-4 text-comic-black text-center font-bangers text-lg tracking-widest"
+        >
+          LOADING...
+        </motion.div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="mt-4 text-slate-500 text-[10px] font-bold uppercase tracking-[0.3em]"
-      >
-        Initializing Digital Universe
-      </motion.div>
     </motion.div>
   );
 };

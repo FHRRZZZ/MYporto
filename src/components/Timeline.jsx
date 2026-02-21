@@ -35,37 +35,43 @@ const Timeline = ({ darkMode }) => {
   ];
 
   return (
-    <section id="timeline" className={`py-24 transition-colors relative ${darkMode ? 'bg-slate-900 border-t border-slate-800' : 'bg-white border-t border-slate-100'}`}>
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className={`text-4xl mb-20 text-center ${darkMode ? 'text-white' : 'text-secondary-dark'}`}>Perjalanan <span className="text-primary italic">Karier</span></h2>
+    <section id="timeline" className={`py-24 transition-colors relative overflow-hidden ${darkMode ? 'bg-slate-900 border-y-4 border-comic-black' : 'bg-secondary border-y-4 border-comic-black'}`}>
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="mb-20 text-center">
+          <div className="bg-white border-4 border-comic-black px-10 py-4 transform skew-x-[-10deg] shadow-comic inline-block">
+            <h2 className="text-5xl font-bangers text-comic-black uppercase tracking-widest">PERJALANAN KARIER</h2>
+          </div>
+        </div>
         
         <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent md:-translate-x-1/2" />
+          {/* Vertical Line - Comic Style */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-2 bg-comic-black md:-translate-x-1/2 border-r-2 border-white" />
           
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experiences.map((exp, idx) => (
               <motion.div 
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className={`relative flex items-center gap-8 md:gap-0 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
                 {/* Content */}
                 <div className="flex-1 ml-16 md:ml-0">
-                  <div className={`p-8 rounded-[2.5rem] shadow-sm border ${darkMode ? 'bg-slate-800 border-slate-700' : 'bg-slate-50 border-slate-200'} ${idx % 2 === 0 ? 'md:mr-16' : 'md:ml-16'}`}>
-                    <span className="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">{exp.year}</span>
-                    <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-secondary-dark'}`}>{exp.title}</h3>
-                    <div className="text-primary-light font-medium mb-4 text-sm">{exp.company}</div>
-                    <p className={darkMode ? 'text-slate-400' : 'text-secondary-light'}>{exp.desc}</p>
+                  <div className={`comic-card p-6 ${idx % 2 === 0 ? 'md:mr-12 transform -rotate-1' : 'md:ml-12 transform rotate-1'}`}>
+                    <div className="flex justify-between items-start mb-4">
+                      <span className="comic-badge bg-primary text-white text-xs">{exp.year}</span>
+                    </div>
+                    <h3 className="text-2xl font-bangers text-comic-black dark:text-white mb-1 uppercase tracking-tight">{exp.title}</h3>
+                    <div className="font-comic font-bold text-secondary mb-4 uppercase text-sm tracking-tighter">{exp.company}</div>
+                    <p className="font-comic font-bold text-comic-black dark:text-slate-300 leading-snug">{exp.desc}</p>
                   </div>
                 </div>
 
-                {/* Center Icon */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-16 h-16 rounded-full bg-primary shadow-[0_0_20px_rgba(29,78,216,0.3)] flex items-center justify-center text-white z-10 md:-translate-x-1/2">
-                  {exp.icon}
+                {/* Center Icon - Comic Badge */}
+                <div className="absolute left-0 md:left-1/2 top-0 w-16 h-16 comic-card p-0 bg-primary flex items-center justify-center text-white z-20 md:-translate-x-1/2 rounded-none transform rotate-12 group-hover:rotate-0 transition-transform">
+                  {React.cloneElement(exp.icon, { size: 32, strokeWidth: 3 })}
                 </div>
 
                 {/* Empty Space for layout */}

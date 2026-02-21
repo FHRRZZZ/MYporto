@@ -28,16 +28,17 @@ const CustomCursor = () => {
   return (
     <div className="hidden lg:block">
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 bg-primary/30 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 w-8 h-8 border-2 border-comic-black rounded-none pointer-events-none z-[9999] dark:border-white"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
-          scale: isHovering ? 2.5 : 1,
+          rotate: isHovering ? 45 : 0,
+          scale: isHovering ? 1.5 : 1,
         }}
         transition={{ type: 'spring', damping: 20, stiffness: 250, mass: 0.5 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2 h-2 bg-primary pointer-events-none z-[9999]"
         animate={{
           x: mousePosition.x - 4,
           y: mousePosition.y - 4,

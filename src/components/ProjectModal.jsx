@@ -14,39 +14,49 @@ const ProjectModal = ({ project, isOpen, onClose, darkMode }) => (
           className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         />
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className={`relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3rem] shadow-2xl ${darkMode ? 'bg-slate-900 text-white' : 'bg-white text-secondary-dark'}`}
+          initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          exit={{ opacity: 0, scale: 0.9, rotate: 2 }}
+          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto comic-card p-0"
         >
           <button 
             onClick={onClose}
-            className={`absolute top-6 right-6 p-3 rounded-full z-10 transition-colors ${darkMode ? 'bg-slate-800 text-white hover:bg-slate-700' : 'bg-slate-100 text-secondary-dark hover:bg-slate-200'}`}
+            className="absolute top-6 right-6 comic-button bg-secondary text-white p-2 z-20"
           >
             <X size={24} />
           </button>
-          <div className="aspect-video w-full overflow-hidden">
-            <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+          
+          <div className="aspect-video w-full overflow-hidden border-b-4 border-comic-black relative">
+            <img src={project.image} alt={project.title} className="w-full h-full object-cover contrast-125" />
+            <div className="absolute inset-0 bg-[radial-gradient(#000_1.5px,transparent_1.5px)] [background-size:6px_6px] opacity-10 pointer-events-none"></div>
           </div>
+          
           <div className="p-8 md:p-12">
-            <span className="text-primary font-bold uppercase tracking-widest text-sm">{project.category}</span>
-            <h2 className={`text-4xl mt-4 mb-6 leading-tight ${darkMode ? 'text-white' : 'text-secondary-dark'}`}>{project.title}</h2>
+            <div className="comic-badge bg-primary text-white mb-4 inline-block">
+              {project.category}
+            </div>
+            <h2 className="text-5xl font-bangers text-comic-black dark:text-white mt-4 mb-6 leading-none">
+              {project.title}
+            </h2>
+            
             <div className="flex flex-wrap gap-3 mb-8">
               {project.tags.map(tag => (
-                <span key={tag} className={`px-4 py-2 rounded-full text-xs font-bold ${darkMode ? 'bg-slate-800 text-primary-light' : 'bg-slate-100 text-primary'}`}>
+                <span key={tag} className="comic-badge bg-white text-comic-black border-2 border-comic-black font-bangers">
                   {tag}
                 </span>
               ))}
             </div>
-            <p className={`text-lg leading-relaxed mb-8 ${darkMode ? 'text-slate-400' : 'text-secondary-light'}`}>
+            
+            <p className="text-xl font-comic font-bold leading-relaxed mb-10 text-comic-black dark:text-slate-300">
               {project.longDesc}
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-primary text-white px-8 py-4 rounded-full font-bold flex items-center hover:bg-primary-dark transition-all">
-                Kunjungi Website <ExternalLink className="ml-2" size={20} />
+            
+            <div className="flex flex-wrap gap-6">
+              <button className="comic-button bg-primary text-white flex items-center text-xl">
+                KUNJUNGI WEBSITE <ExternalLink className="ml-2" size={24} />
               </button>
-              <button className={`px-8 py-4 rounded-full font-bold border-2 transition-all ${darkMode ? 'border-slate-700 text-white hover:bg-slate-800' : 'border-slate-200 text-secondary-dark hover:bg-slate-50'}`}>
-                Lihat Case Study
+              <button className="comic-button bg-white text-comic-black flex items-center text-xl">
+                CASE STUDY
               </button>
             </div>
           </div>
