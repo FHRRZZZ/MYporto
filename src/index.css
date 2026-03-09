@@ -47,7 +47,7 @@ body {
   }
 
   .dark .comic-card {
-    @apply bg-slate-800 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
+    @apply bg-slate-900 border-primary shadow-[4px_4px_0px_0px_rgba(59,130,246,1)] hover:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)];
   }
 
   .comic-badge {
@@ -68,5 +68,5 @@ body {
 }
 
 .dark .glass {
-  @apply bg-slate-900/90 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)];
+  @apply bg-slate-950/90 border-primary shadow-[4px_4px_0px_0px_rgba(59,130,246,1)];
 }

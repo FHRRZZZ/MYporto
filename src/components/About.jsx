@@ -10,7 +10,7 @@ const About = ({ darkMode }) => (
             Saya adalah seorang <span className="bg-primary px-1">Web & Mobile Developer</span> yang berdedikasi untuk menciptakan solusi digital yang efisien dan inovatif. Dengan pengalaman dalam berbagai framework, saya siap membantu mendigitalkan ide Anda.
           </p>
           <div className="grid grid-cols-2 gap-6">
-            <div className="comic-card bg-accent text-white p-4 transform rotate-2">
+            <div className="comic-card bg-accent text-primary p-4 transform rotate-2">
               <div className="font-bangers text-3xl mb-1 uppercase">Tech Stack</div>
               <div className="font-comic text-xs font-bold uppercase tracking-wider opacity-90">BERAGAM</div>
             </div>

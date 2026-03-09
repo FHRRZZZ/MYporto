@@ -14,7 +14,7 @@ const Services = ({ darkMode }) => {
     <section id="services" className={`py-24 transition-colors relative overflow-hidden ${darkMode ? 'bg-slate-900 border-t-4 border-comic-black' : 'bg-white border-t-4 border-comic-black'}`}>
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
         <div className="mb-16 inline-block bg-accent border-4 border-comic-black px-8 py-3 transform rotate-[-1deg] shadow-comic">
-          <h2 className="text-5xl font-bangers text-white uppercase tracking-wider">LAYANAN UNGGULAN</h2>
+          <h2 className="text-5xl font-bangers text-primary uppercase tracking-wider">LAYANAN UNGGULAN</h2>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

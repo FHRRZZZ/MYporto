@@ -6,7 +6,7 @@ const Footer = ({ darkMode }) => (
       <div>
         <div className="text-3xl font-bangers text-primary mb-2 tracking-widest uppercase flex items-center justify-center md:justify-start gap-2">
           <div className="bg-comic-black text-white px-2 transform -skew-x-12">MIQDAD</div>
-          <div className="text-secondary transform skew-x-12">FH</div>
+          <div className="text-secondary dark:text-primary-light transform skew-x-12">FH</div>
         </div>
         <p className="font-comic font-bold uppercase text-sm tracking-tighter">© {new Date().getFullYear()} Miqdad Portfolio. THE END.</p>
       </div>

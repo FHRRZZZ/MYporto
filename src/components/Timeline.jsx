@@ -61,7 +61,7 @@ const Timeline = ({ darkMode }) => {
                       <span className="comic-badge bg-primary text-white text-xs">{exp.year}</span>
                     </div>
                     <h3 className="text-2xl font-bangers text-comic-black dark:text-white mb-1 uppercase tracking-tight">{exp.title}</h3>
-                    <div className="font-comic font-bold text-secondary mb-4 uppercase text-sm tracking-tighter">{exp.company}</div>
+                    <div className="font-comic font-bold text-secondary dark:text-primary-light mb-4 uppercase text-sm tracking-tighter">{exp.company}</div>
                     <p className="font-comic font-bold text-comic-black dark:text-slate-300 leading-snug">{exp.desc}</p>
                   </div>
                 </div>

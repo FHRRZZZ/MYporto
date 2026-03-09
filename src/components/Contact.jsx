@@ -9,14 +9,14 @@ const Contact = ({ darkMode }) => (
         
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-5xl md:text-7xl font-bangers text-white mb-6 leading-none tracking-wider">
+            <h2 className="text-5xl md:text-7xl font-bangers text-primary mb-6 leading-none tracking-wider">
               SIAP BERAKSI BERSAMA?
             </h2>
-            <p className="text-white font-comic font-bold text-xl mb-12">Mari berkolaborasi untuk membangun sesuatu yang luar biasa.</p>
+            <p className="text-secondary font-comic font-bold text-xl mb-12">Mari berkolaborasi untuk membangun sesuatu yang luar biasa.</p>
             <div className="flex space-x-4">
-              <a href="#" className="comic-button bg-white text-comic-black p-4"><Github size={28} /></a>
-              <a href="#" className="comic-button bg-white text-comic-black p-4"><Linkedin size={28} /></a>
-              <a href="#" className="comic-button bg-white text-comic-black p-4"><Mail size={28} /></a>
+              <a href="https://github.com/FHRRZZZ" className="comic-button bg-white text-comic-black p-4"><Github size={28} /></a>
+              <a href="www.linkedin.com/in/miqdad-fh-63ba3b372" className="comic-button bg-white text-comic-black p-4"><Linkedin size={28} /></a>
+              <a href="miqdadhaq@gmail.com" className="comic-button bg-white text-comic-black p-4"><Mail size={28} /></a>
             </div>
           </div>
           

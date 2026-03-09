@@ -47,7 +47,7 @@ const Hero = ({ darkMode }) => (
         className="relative group"
       >
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent rounded-full border-4 border-comic-black flex items-center justify-center animate-bounce z-20 transform rotate-12">
-           <span className="font-bangers text-white text-3xl">ZAP!</span>
+           <span className="font-bangers text-primary text-3xl">ZAP!</span>
         </div>
 
         <div className="comic-card p-2 bg-comic-black transform rotate-2">

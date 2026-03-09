@@ -6,24 +6,24 @@ export default {
     extend: {
       colors: {
         primary: {
-          light: "#facc15", // Yellow 400
-          DEFAULT: "#eab308", // Yellow 500
-          dark: "#ca8a04", // Yellow 600
+          light: "#60a5fa", // Blue 400
+          DEFAULT: "#3b82f6", // Blue 500
+          dark: "#2563eb", // Blue 600
         },
         secondary: {
-          light: "#ef4444", // Red 500
-          DEFAULT: "#dc2626", // Red 600
-          dark: "#991b1b", // Red 800
+          light: "#3b82f6", // Blue 500
+          DEFAULT: "#1e40af", // Blue 800
+          dark: "#1e3a8a", // Blue 900
         },
         accent: {
-          light: "#3b82f6", // Blue 500
-          DEFAULT: "#2563eb", // Blue 600
-          dark: "#1d4ed8", // Blue 700
+          light: "#eff6ff", // Blue 50
+          DEFAULT: "#ffffff", // White
+          dark: "#dbeafe", // Blue 100
         },
         comic: {
           black: "#000000",
           white: "#ffffff",
-          paper: "#fefce8",
+          paper: "#ffffff",
         }
       },
       fontFamily: {

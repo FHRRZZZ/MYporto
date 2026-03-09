@@ -30,7 +30,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           className="text-3xl font-bangers text-primary tracking-wider uppercase flex items-center gap-2"
         >
           <div className="bg-comic-black text-white px-2 py-1 transform -skew-x-12">MIQDAD</div>
-          <div className="text-secondary transform skew-x-12">FH</div>
+          <div className="text-secondary dark:text-primary-light transform skew-x-12">FH</div>
         </motion.div>
 
         <div className="hidden md:flex items-center space-x-6">
@@ -45,7 +45,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           ))}
           <button 
             onClick={() => setDarkMode(!darkMode)}
-            className={`p-2 border-3 border-comic-black shadow-comic transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none ${darkMode ? 'bg-slate-800 text-yellow-400' : 'bg-white text-slate-600'}`}
+            className={`p-2 border-3 border-comic-black shadow-comic transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none ${darkMode ? 'bg-slate-800 text-blue-400' : 'bg-white text-slate-600'}`}
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
@@ -53,7 +53,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         <div className="md:hidden flex items-center space-x-4">
           <button onClick={() => setDarkMode(!darkMode)} className="p-2 border-2 border-comic-black bg-white">
-            {darkMode ? <Sun size={24} className="text-yellow-500" /> : <Moon size={24} className="text-slate-600" />}
+            {darkMode ? <Sun size={24} className="text-blue-500" /> : <Moon size={24} className="text-slate-600" />}
           </button>
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 border-2 border-comic-black bg-white">
             {isMobileMenuOpen ? <X size={28} className="text-comic-black" /> : <Menu size={28} className="text-comic-black" />}
