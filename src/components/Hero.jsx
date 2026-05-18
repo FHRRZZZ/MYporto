@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, Download, Code2, Globe } from 'lucide-react';
+import { ChevronRight, Download, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import profileImg from '../assets/profile.png';
 
 const Hero = ({ darkMode }) => (
@@ -30,11 +31,14 @@ const Hero = ({ darkMode }) => (
           Saya spesialis dalam membangun sistem web dan aplikasi modern menggunakan teknologi terkini untuk solusi digital Anda.
         </p>
 
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <a href="#projects" className="comic-button bg-primary flex items-center justify-center">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link to="/projects" className="comic-button bg-primary flex items-center justify-center text-white">
             Lihat Proyek <ChevronRight className="ml-2" size={20} />
-          </a>
-          <button className="comic-button bg-white text-comic-black flex items-center justify-center">
+          </Link>
+          <Link to="/contact" className="comic-button bg-secondary text-white flex items-center justify-center">
+            Hubungi Saya <Mail className="ml-2" size={20} />
+          </Link>
+          <button className="comic-button bg-white text-comic-black flex items-center justify-center border-2 border-comic-black">
             Unduh CV <Download className="ml-2" size={20} />
           </button>
         </div>

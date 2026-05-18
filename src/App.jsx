@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 
 import Preloader from './components/Preloader';
 import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';
 import BackgroundParticles from './components/BackgroundParticles';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Timeline from './components/Timeline';
-import Services from './components/Services';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import GithubStats from './components/GithubStats';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+
+// Pages
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -38,21 +46,24 @@ function App() {
 
       {!loading && (
         <>
+          <ScrollToTop />
           <ScrollProgress />
           <CustomCursor />
           <BackgroundParticles darkMode={darkMode} />
           
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-col min-h-screen">
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-            <Hero darkMode={darkMode} />
-            <About darkMode={darkMode} />
-            <Timeline darkMode={darkMode} />
-            <Services darkMode={darkMode} />
-            <Projects darkMode={darkMode} />
-            <Skills darkMode={darkMode} />
-            <GithubStats darkMode={darkMode} />
-            <Testimonials darkMode={darkMode} />
-            <Contact darkMode={darkMode} />
+            
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home darkMode={darkMode} />} />
+                <Route path="/about" element={<AboutPage darkMode={darkMode} />} />
+                <Route path="/projects" element={<ProjectsPage darkMode={darkMode} />} />
+                <Route path="/services" element={<ServicesPage darkMode={darkMode} />} />
+                <Route path="/contact" element={<ContactPage darkMode={darkMode} />} />
+              </Routes>
+            </main>
+
             <Footer darkMode={darkMode} />
           </div>
 
@@ -62,12 +73,12 @@ function App() {
             transition={{ duration: 1 }}
             className="fixed bottom-8 right-8 z-[100]"
           >
-            <a 
-              href="#contact" 
+            <Link 
+              to="/contact" 
               className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform group"
             >
               <Zap size={24} className="group-hover:animate-pulse" />
-            </a>
+            </Link>
           </motion.div>
         </>
       )}

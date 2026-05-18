@@ -7,6 +7,13 @@ const Projects = ({ darkMode }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const projects = [
     { 
+      title: "AetherJS", 
+      category: "Frontend Framework", 
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
+      tags: ["JavaScript", "Frontend", "Framework", "Modular"],
+      longDesc: "AetherJS adalah lightweight frontend framework yang dirancang untuk membangun antarmuka web yang reaktif dan skalabel dengan arsitektur modular yang bersih."
+    },
+    { 
       title: "E-Commerce Platform", 
       category: "Web App", 
       image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800",

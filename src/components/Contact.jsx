@@ -14,9 +14,9 @@ const Contact = ({ darkMode }) => (
             </h2>
             <p className="text-secondary font-comic font-bold text-xl mb-12">Mari berkolaborasi untuk membangun sesuatu yang luar biasa.</p>
             <div className="flex space-x-4">
-              <a href="https://github.com/FHRRZZZ" className="comic-button bg-white text-comic-black p-4"><Github size={28} /></a>
-              <a href="www.linkedin.com/in/miqdad-fh-63ba3b372" className="comic-button bg-white text-comic-black p-4"><Linkedin size={28} /></a>
-              <a href="miqdadhaq@gmail.com" className="comic-button bg-white text-comic-black p-4"><Mail size={28} /></a>
+              <a href="https://github.com/FHRRZZZ" target="_blank" rel="noopener noreferrer" className="comic-button bg-white text-comic-black p-4"><Github size={28} /></a>
+              <a href="https://www.linkedin.com/in/miqdad-fh-63ba3b372" target="_blank" rel="noopener noreferrer" className="comic-button bg-white text-comic-black p-4"><Linkedin size={28} /></a>
+              <a href="mailto:miqdadhaq@gmail.com" className="comic-button bg-white text-comic-black p-4"><Mail size={28} /></a>
             </div>
           </div>
           
@@ -27,7 +27,7 @@ const Contact = ({ darkMode }) => (
               <input type="email" placeholder="EMAIL ANDA" className="comic-input w-full uppercase dark:bg-slate-700 dark:text-white dark:border-white" />
               <textarea placeholder="PESAN ANDA" rows="4" className="comic-input w-full uppercase dark:bg-slate-700 dark:text-white dark:border-white"></textarea>
             </div>
-            <button className="comic-button w-full bg-secondary text-white flex items-center justify-center group text-xl" type="button">
+            <button className="comic-button w-full bg-secondary text-white flex items-center justify-center group text-xl" type="submit">
               KIRIM SEKARANG <Send className="ml-2 group-hover:translate-x-2 transition-transform" size={24} />
             </button>
           </form>

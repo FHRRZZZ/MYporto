@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,35 +14,40 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Beranda', href: '#home' },
-    { name: 'Tentang', href: '#about' },
-    { name: 'Proyek', href: '#projects' },
-    { name: 'Layanan', href: '#services' },
-    { name: 'Keahlian', href: '#skills' },
-    { name: 'Kontak', href: '#contact' },
+    { name: 'Beranda', path: '/' },
+    { name: 'Tentang', path: '/about' },
+    { name: 'Proyek', path: '/projects' },
+    { name: 'Layanan', path: '/services' },
+    { name: 'Kontak', path: '/contact' },
   ];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
-      <div className={`max-w-7xl mx-auto px-6 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'glass mx-4 rounded-none' : 'bg-transparent'}`}>
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="text-3xl font-bangers text-primary tracking-wider uppercase flex items-center gap-2"
-        >
-          <div className="bg-comic-black text-white px-2 py-1 transform -skew-x-12">MIQDAD</div>
-          <div className="text-secondary dark:text-primary-light transform skew-x-12">FH</div>
-        </motion.div>
+      <div className={`max-w-7xl mx-auto px-6 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'glass mx-4 rounded-none shadow-comic' : 'bg-transparent'}`}>
+        <Link to="/">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="text-3xl font-bangers text-primary tracking-wider uppercase flex items-center gap-2"
+          >
+            <div className="bg-comic-black text-white px-2 py-1 transform -skew-x-12">MIQDAD</div>
+            <div className="text-secondary dark:text-primary-light transform skew-x-12">FH</div>
+          </motion.div>
+        </Link>
 
         <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <a 
+            <NavLink 
               key={link.name} 
-              href={link.href}
-              className={`font-bangers text-lg uppercase tracking-widest transition-all hover:scale-110 hover:text-primary ${darkMode ? 'text-white' : 'text-comic-black'}`}
+              to={link.path}
+              className={({ isActive }) => 
+                `font-bangers text-lg uppercase tracking-widest transition-all hover:scale-110 hover:text-primary ${
+                  isActive ? 'text-primary scale-110 underline decoration-4 underline-offset-4' : (darkMode ? 'text-white' : 'text-comic-black')
+                }`
+              }
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
           <button 
             onClick={() => setDarkMode(!darkMode)}
@@ -71,14 +77,18 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           >
             <div className="px-6 py-8 flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <a 
+                <NavLink 
                   key={link.name} 
-                  href={link.href}
+                  to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-2xl font-bangers uppercase tracking-widest ${darkMode ? 'text-white' : 'text-comic-black'}`}
+                  className={({ isActive }) => 
+                    `text-2xl font-bangers uppercase tracking-widest ${
+                      isActive ? 'text-primary' : (darkMode ? 'text-white' : 'text-comic-black')
+                    }`
+                  }
                 >
                   {link.name}
-                </a>
+                </NavLink>
               ))}
             </div>
           </motion.div>
