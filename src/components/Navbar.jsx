@@ -18,6 +18,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     { name: 'Tentang', path: '/about' },
     { name: 'Proyek', path: '/projects' },
     { name: 'Layanan', path: '/services' },
+    { name: 'Playground', path: '/playground' },
     { name: 'Kontak', path: '/contact' },
   ];
 

@@ -16,6 +16,7 @@ import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import PlaygroundPage from './pages/PlaygroundPage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -60,6 +61,7 @@ function App() {
                 <Route path="/about" element={<AboutPage darkMode={darkMode} />} />
                 <Route path="/projects" element={<ProjectsPage darkMode={darkMode} />} />
                 <Route path="/services" element={<ServicesPage darkMode={darkMode} />} />
+                <Route path="/playground" element={<PlaygroundPage darkMode={darkMode} />} />
                 <Route path="/contact" element={<ContactPage darkMode={darkMode} />} />
               </Routes>
             </main>
